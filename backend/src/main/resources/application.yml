@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: clinical-trial-documentation
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ctd_db
+    username: ctd_user
+    password: ctd_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  security:
+    jwt:
+      secret: ${JWT_SECRET:defaultSecretKeyForDevelopmentOnlyChangeInProduction123456789012345678901234567890}
+      expiration: 86400000  # 24 hours in milliseconds
+
+iota:
+  enabled: false  # MVP: usa mock
+  network: testnet
+  node-url: https://api.testnet.shimmer.network
+  explorer-url: https://explorer.shimmer.network/testnet
+
+logging:
+  level:
+    com.ctd: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
