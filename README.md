@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Clinical Trial Documentation Platform
 
 Piattaforma web collaborativa per la gestione documentale dei Clinical Trials che combina **Xanadu** (versioning granulare, link bidirezionali, transclusion) con **IOTA** (blockchain, notarizzazione, identità digitale).
@@ -331,6 +332,10 @@ export JWT_SECRET=your-super-secret-key-64chars-minimum
 
 Progetto hackathon - contributi benvenuti!
 
-## 📄 License
+## KnowledgeBase
+
+A simple Java framework to organize data in a Xanadu-like way. Originally developed as a standalone library, now integrated as the core content engine of this platform.
+
+## License
 
 MIT
